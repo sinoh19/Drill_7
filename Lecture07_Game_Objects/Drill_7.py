@@ -14,6 +14,12 @@ class Ball:
         self.x = random.randint(0, 800)
         self.y = random.randint(0, 600)
 
+    def update(self):
+        if self.y > self.size:
+            self.y -= self.size
+            if self.y < self.size:
+                self.y = self.size # 바닥에 닿으면 멈춤
+
 class Grass:
     def __init__(self):
         self.image = load_image('grass.png')
