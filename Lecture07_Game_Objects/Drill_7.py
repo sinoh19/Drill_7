@@ -20,6 +20,9 @@ class Ball:
             if self.y < self.size:
                 self.y = self.size # 바닥에 닿으면 멈춤
 
+    def draw(self):
+        self.image.draw(self.x, self.y)
+
 class Grass:
     def __init__(self):
         self.image = load_image('grass.png')
