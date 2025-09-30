@@ -13,18 +13,33 @@ class Grass:
         pass
     pass
 
+class Boy:
+    def __init__(self):
+        self.x, self.y = 0, 90
+        self.image = load_image('run_animation.png')
+
+    def update(self):
+        self.frame = (self.frame + 1) % 8
+        self.x += 5
+
+    def draw(self):
+        self.image.clip_draw(self.frame * 100, 0, 100, 100, self.x, self.y)
+
 def rest_world():
     global running
+    global grass
     running = True
 
+    grass = Grass()
+
 def update_world():
+    grass.update()
     pass
 
 def render_world():
     clear_canvas()
+    grass.draw()
     update_canvas()
-    open_canvas()
-    rest_world()
 
 
 def handle_events():
