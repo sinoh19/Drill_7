@@ -33,3 +33,20 @@ class Grass:
     def update(self):
         pass
     pass
+
+def rest_world():
+    global running
+    global grass
+    global balls
+
+    running = True
+    grass = Grass()
+    balls = [Ball() for i in range(20)]
+
+def update_world():
+    grass.update()
+    for ball in balls:
+        ball.update()
+    pass
+
+open_canvas()
