@@ -49,4 +49,11 @@ def update_world():
         ball.update()
     pass
 
+def render_world():
+    clear_canvas()
+    grass.draw()
+    for ball in balls:
+        ball.draw()
+    update_canvas()
+
 open_canvas()
