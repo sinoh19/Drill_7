@@ -12,7 +12,7 @@ class Ball:
             self.size = 41
 
         self.x = random.randint(0, 800)
-        self.y = random.randint(200, 600)
+        self.y = random.randint(200, 599)
         self.speed = random.randint(1, 10)
 
     def update(self):
