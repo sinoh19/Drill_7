@@ -13,16 +13,17 @@ class Ball:
 
         self.x = random.randint(0, 800)
         self.y = random.randint(200, 600)
+        self.speed = random.randint(1, 10)
 
     def update(self):
         if self.size == 41:
          if self.y > self.size:
-            self.y -= self.size
+            self.y -= self.speed
             if self.y < 70:
                 self.y = 70 # 바닥에 닿으면 멈춤
         else:
          if self.y > self.size:
-            self.y -= self.size
+            self.y -= self.speed
             if self.y < 60:
                 self.y = 60
 
