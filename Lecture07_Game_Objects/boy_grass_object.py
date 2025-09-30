@@ -2,7 +2,29 @@ from pico2d import *
 import random
 
 
-# Game object class here
+class Grass:
+    def __init__(self):
+        self.image = load_image('grass.png')
+
+    def draw(self):
+        self.image.draw(400, 30)
+
+    def update(self):
+        pass
+    pass
+
+def rest_world():
+    global running
+    running = True
+
+def update_world():
+    pass
+
+def render_world():
+    clear_canvas()
+    update_canvas()
+    open_canvas()
+    rest_world()
 
 
 def handle_events():
