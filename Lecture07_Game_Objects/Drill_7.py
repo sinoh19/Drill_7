@@ -12,13 +12,19 @@ class Ball:
             self.size = 41
 
         self.x = random.randint(0, 800)
-        self.y = random.randint(0, 600)
+        self.y = random.randint(200, 600)
 
     def update(self):
-        if self.y > self.size:
+        if self.size == 41:
+         if self.y > self.size:
             self.y -= self.size
-            if self.y < self.size:
-                self.y = self.size # 바닥에 닿으면 멈춤
+            if self.y < 70:
+                self.y = 70 # 바닥에 닿으면 멈춤
+        else:
+         if self.y > self.size:
+            self.y -= self.size
+            if self.y < 60:
+                self.y = 60
 
     def draw(self):
         self.image.draw(self.x, self.y)
