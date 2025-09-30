@@ -13,3 +13,14 @@ class Ball:
 
         self.x = random.randint(0, 800)
         self.y = random.randint(0, 600)
+
+class Grass:
+    def __init__(self):
+        self.image = load_image('grass.png')
+
+    def draw(self):
+        self.image.draw(400, 30)
+
+    def update(self):
+        pass
+    pass
