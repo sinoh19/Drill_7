@@ -15,7 +15,8 @@ class Grass:
 
 class Boy:
     def __init__(self):
-        self.x, self.y = 0, 90
+        self.x, self.y = random.randint(100, 700), 90
+        self.frame = random.randint(0, 7)
         self.image = load_image('run_animation.png')
 
     def update(self):
@@ -28,21 +29,23 @@ class Boy:
 def rest_world():
     global running
     global grass
-    global boy
-    running = True
+    global team
 
+    running = True
     grass = Grass()
-    boy = Boy()
+    team = [Boy() for i in range(10)]
 
 def update_world():
     grass.update()
-    boy.update()
+    for boy in team:
+        boy.update()
     pass
 
 def render_world():
     clear_canvas()
     grass.draw()
-    boy.draw()
+    for boy in team:
+        boy.draw()
     update_canvas()
 
 
@@ -59,7 +62,12 @@ def handle_events():
 
 
 open_canvas()
-
+rest_world()
+while running:
+    handle_events()
+    update_world()
+    render_world()
+    delay(0.05)
 
 
 close_canvas()
