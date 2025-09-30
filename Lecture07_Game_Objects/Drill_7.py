@@ -20,7 +20,7 @@ class Ball:
          if self.y > self.size:
             self.y -= self.speed
             if self.y < 70:
-                self.y = 70 # 바닥에 닿으면 멈춤
+                self.y = 70
         else:
          if self.y > self.size:
             self.y -= self.speed
